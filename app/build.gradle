@@ -39,5 +39,5 @@ dependencies {
 apply plugin: 'dexCounter'
 dexCounterExt {
     enable = true
-    threshold = 1000
+    threshold = 60000
 }
