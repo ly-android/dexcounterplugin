@@ -1,7 +1,7 @@
 [ ![Download](https://api.bintray.com/packages/allenli/tinypngplugin/tinyPng/images/download.svg?version=1.0.0) ](https://bintray.com/allenli/tinypngplugin/tinyPng/1.0.0/link)
 
 ### dexCounterPlugin
-`TinyPngPlugin` is a Gradle plugin for [TinyPng](https://tinypng.com/), can batch optimize your images.
+`dexConterPlugin` is a Gradle plugin for count dex method size.
 
 ### Get Tiny API key
 Before use this plugin, you need get a Tiny API Key first. Goto [Tiny Developers Page](https://tinypng.com/developers), input your email and name to get the key.
