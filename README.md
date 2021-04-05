@@ -9,40 +9,20 @@ Before use this plugin, you need get a Tiny API Key first. Goto [Tiny Developers
 *Notice: The first 500 compressions each month are free. You will only be billed if you compress more than 500 images.*
 
 ### Getting Started
-Add `TinyPngPlugin` as a dependency in your main build.gradle in the root of your project:
+Add `dexCounterPlugin` as a dependency in your main build.gradle in the root of your project:
 
  	dependencies {
-    	classpath 'com.allen.tools.gradle:tinyPng:1.0.0'
+    	classpath 'com.allen.tools.gradle:dexCounter:1.0.0'
 	}
 
 Then you need to apply the plugin and configure your `tinyinfo` by adding the following lines to your `app/build.gradle`:
 
- 	apply plugin: 'tinyPng'
+ 	apply plugin: 'dexCounter'
 
- 	tinyInfo {
-    	resourceDir = [
-			// your res dir
-            "app/src/main/res",
-            "lib/src/main/res"
-    	]
-        resourcePattern = [
-        	// your res pattern
-        	"drawable[a-z-]*",
-            "mipmap[a-z-]*"
-        ]
-        whiteList = [
-        	// your white list, support Regular Expressions
-        	'host.+\\.png'
-        ]
-        apiKeys = ['your tiny API key']
+ 	dexCounterExt {
+        enable = true
+        threshold = 1000
     }
-
-If you are using `Android Studio`, you can find the generate task option in `tinypng` group. Or alternatively, you run `./gradlew tinyPng` in your terminal.
-
-`TinyPngPlugin` has a `compressed-resource.json` file to record the compressed result, next time `TinyPngPlugin` will skip these files that have been compressed.
-
-### Thanks
-[TinyPIC_Gradle_Plugin](https://github.com/mogujie/TinyPIC_Gradle_Plugin)
 
 ### Licence
 MIT License

@@ -48,14 +48,14 @@ bintray {
     //上传的内容
     publications = ['plugin']
     pkg {
-        repo = 'dexCounterPlugin'//需要上传的仓库名
+        repo = 'dexcounterplugin'//需要上传的仓库名
         name = moduleName //上传到jcenter的项目名
         licenses = ['Apache-2.0']//开源许可
         //这里的地址是不会验证的,随便输入都可以,不配置也可以
         vcsUrl = 'https://github.com/ly-android/dexCounterPlugin.git'
         version {
             name = PLUGIN_VERSION
-            desc = '一个可以自动化压缩资源图片的插件'
+            desc = '一个可以统计dex方法数的插件'
             released = new Date()
             attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
         }
