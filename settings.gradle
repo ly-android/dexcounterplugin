@@ -1,0 +1,4 @@
+include ':app'
+rootProject.name = "dexCounterPlugin"
+include ':buildSrc'
+project(':buildSrc').setName('dexCounter')
