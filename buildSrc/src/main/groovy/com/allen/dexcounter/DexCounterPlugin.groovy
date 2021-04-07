@@ -50,21 +50,23 @@ class DexCounterPlugin implements Plugin<Project> {
                             }
                         }
                         //start count size
-                        countDexMethodSize(dexList,project)
+                        countDexMethodSize(dexList, project)
                     }
                 }
             }
         }
     }
 
-    static def countDexMethodSize(List<Dex> dexList,Project proj) {
+    static def countDexMethodSize(List<Dex> dexList, Project proj) {
         int sum = 0
         int max = proj.extensions.dexCounterExt.threshold
-        dexList.each { Dex dex ->
-            sum += dex.methodIds().size()
-            println ">>>>>>>>>>>>dex nums=${dexList.size()} method size:${sum}>>>>>>>>>>>>>>>"
+        println ">>>>>>>>>>>>[dexCounterPlugin] dex nums=${dexList.size()} <<<<<<<<<<<<<<<<<<"
+        dexList.eachWithIndex { Dex dex, int index ->
+            int current = dex.methodIds().size()
+            sum += current
+            println ">>>>>>>>>>>>[dexCounterPlugin] dex index=${index} reference methodIds:${current},total=${sum} <<<<<<<<<<<<<<<<<<"
             if (sum > max) {
-                throw new GradleException("dex size is more than ${max},please split dex to others plugins....")
+                throw new GradleException("[dexCounterPlugin] dex size is more than ${max},please split dex to others plugins....")
             }
         }
     }
